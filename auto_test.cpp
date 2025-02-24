@@ -11,11 +11,31 @@ void func()
         cout<<*it<<endl;
     }
 }
+ class Widget
+ {
+public:
+    Widget()
+    {
+        prio.push_back(true);
+        prio.push_back(false);
+        prio.push_back(true);
+        prio.push_back(false);
+    }
+    std::vector<bool> prio;
+ };
 
+std::vector<bool> features(const Widget& w)
+{
+    return w.prio;
+}
+void processprio(const Widget&w, bool prio)
+{
+    cout<<"prio"<<prio<<endl;
+}
 int main()
 {
-    int x = 27;
-    auto && rrx = x;
-    cout<<typeid(rrx).name()<<endl;
+    Widget w;
+    auto h = features(w)[3];
+    processprio(w,h);
     return 0;
 }
