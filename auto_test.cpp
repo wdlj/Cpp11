@@ -21,8 +21,17 @@ public:
         prio.push_back(true);
         prio.push_back(false);
     }
+    int a(100);
+    int b{200};
     std::vector<bool> prio;
  };
+
+int Widget::a(int p)
+{
+    cout<<p<<endl;   
+    return p;
+}
+
 
 std::vector<bool> features(const Widget& w)
 {
@@ -32,9 +41,12 @@ void processprio(const Widget&w, bool prio)
 {
     cout<<"prio"<<prio<<endl;
 }
+
+
 int main()
 {
     Widget w;
+    w.a();
     auto h = features(w)[3];
     processprio(w,h);
     return 0;
